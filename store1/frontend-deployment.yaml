@@ -19,6 +19,4 @@ spec:
             - containerPort: 3000
           envFrom:
             - configMapRef:
-                name: store1-config
-            - secretRef:
-                name: store1-secrets
+                name: store1-frontend-config

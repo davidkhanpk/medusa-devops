@@ -24,7 +24,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: store1-secrets
-                  key: DATABASE_URL
+                  key: DATABASE_PASSWORD
           ports:
             - containerPort: 5432
 ---

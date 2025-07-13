@@ -19,7 +19,7 @@ spec:
             - containerPort: 9000
           envFrom:
             - configMapRef:
-                name: store1-config
+                name: store1-backend-config
             - secretRef:
                 name: store1-secrets
 

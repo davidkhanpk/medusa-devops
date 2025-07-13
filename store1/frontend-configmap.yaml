@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: store1-frontend-config
+data:
+  MEDUSA_BACKEND_URL: "https://admin.store1.shopikool.store"
+  NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: "pk_test_1234567890"
+  NEXT_PUBLIC_BASE_URL: "https://store1.shopikool.store"
+  NEXT_PUBLIC_DEFAULT_REGION: "us"
+  NEXT_PUBLIC_STRIPE_KEY: "pk_test_stripe_1234"
+  REVALIDATE_SECRET: "supersecret"
