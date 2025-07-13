@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: store1-config
+data:
+  STORE_CORS: https://store1.shopikool.store
+  ADMIN_CORS: https://admin.store1.shopikool.store
+  AUTH_CORS: https://store1.shopikool.store,https://admin.store1.shopikool.store
+  DISABLE_MEDUSA_ADMIN: "false"
+  MEDUSA_WORKER_MODE: server
+  PORT: "9000"
+  MEDUSA_BACKEND_URL: https://admin.store1.shopikool.store
+  NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: pk_test_1234567890
+  NEXT_PUBLIC_BASE_URL: https://store1.shopikool.store
+  NEXT_PUBLIC_DEFAULT_REGION: us
