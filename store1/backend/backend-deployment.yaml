@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: store1-backend
+  namespace: store1
 spec:
   replicas: 1
   selector:
@@ -15,6 +16,7 @@ spec:
       containers:
         - name: backend
           image: davidkhan/medusadev:backend
+          imagePullPolicy: Always
           ports:
             - containerPort: 9000
           envFrom:
@@ -22,4 +24,3 @@ spec:
                 name: store1-backend-config
             - secretRef:
                 name: store1-secrets
-

@@ -2,10 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: store1-ingress
+  namespace: store1
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    kubernetes.io/ingress.class: "traefik"
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: "letsencrypt"
 spec:
+  tls:
+    - hosts:
+        - store1.shopikool.store
+        - admin.store1.shopikool.store
+      secretName: store1-tls
   rules:
     - host: store1.shopikool.store
       http:
@@ -27,8 +35,3 @@ spec:
                 name: store1-backend
                 port:
                   number: 80
-  tls:
-    - hosts:
-        - store1.shopikool.store
-        - admin.store1.shopikool.store
-      secretName: store1-tls  # Must be issued by cert-manager or uploaded manually

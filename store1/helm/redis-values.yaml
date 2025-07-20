@@ -1,0 +1,7 @@
+auth:
+  enabled: true
+  password: medusaredispass
+architecture: standalone
+master:
+  persistence:
+    enabled: true
